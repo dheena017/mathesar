@@ -111,6 +111,8 @@ export default function popper(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     popperInstance = createPopper(reference, node, {
       placement: options?.placement || 'bottom-start',
+      strategy: options?.strategy || 'absolute',
+      onFirstUpdate: options?.onFirstUpdate,
       modifiers: buildModifiers(
         options?.modifiers ?? [],
         actionOpts.customModifierOptions,

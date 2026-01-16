@@ -48,6 +48,7 @@
    */
   export let autoReposition = false;
   export let trapFocus = false;
+  export let strategy: 'absolute' | 'fixed' = 'absolute';
 
   /**
    * By default, we ensure that the dropdown content width is no smaller than
@@ -140,6 +141,7 @@
       autoReposition,
       options: {
         placement,
+        strategy,
         modifiers: [
           {
             name: 'flip',
