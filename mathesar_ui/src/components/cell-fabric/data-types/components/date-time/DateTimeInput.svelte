@@ -102,6 +102,7 @@
   bind:isOpen
   on:close={onDropdownClose}
   strategy="fixed"
+  closeOnScroll={true}
 >
   <InlineDateTimePicker
     {type}

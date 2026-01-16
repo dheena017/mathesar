@@ -49,6 +49,7 @@
   export let autoReposition = false;
   export let trapFocus = false;
   export let strategy: 'absolute' | 'fixed' = 'absolute';
+  export let closeOnScroll = false;
 
   /**
    * By default, we ensure that the dropdown content width is no smaller than
@@ -128,7 +129,22 @@
       close();
     }
   }
+
+  function handleScroll(e: Event) {
+    if (!isOpen || !closeOnScroll || !contentElement) {
+      return;
+    }
+    // If the scroll happened inside the dropdown itself, don't close.
+    // We check if the scroll target is the content element or one of its descendants.
+    const target = e.target as Node;
+    if (contentElement.contains(target)) {
+      return;
+    }
+    close();
+  }
 </script>
+
+<svelte:window on:scroll|capture={handleScroll} />
 
 {#if isOpen}
   <div
