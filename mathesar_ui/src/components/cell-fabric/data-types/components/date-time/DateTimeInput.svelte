@@ -101,6 +101,7 @@
   trigger={element}
   bind:isOpen
   on:close={onDropdownClose}
+  strategy="fixed"
 >
   <InlineDateTimePicker
     {type}

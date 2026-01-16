@@ -142,6 +142,7 @@
     {isOpen}
     on:close={() => handleDropdownClose(api)}
     class="single-select-cell-dropdown retain-active-cell"
+    strategy="fixed"
   >
     <ListBoxOptions {id} />
   </AttachableDropdown>
