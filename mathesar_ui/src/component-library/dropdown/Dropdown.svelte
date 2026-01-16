@@ -28,6 +28,7 @@
    * resizes.
    */
   export let autoReposition = false;
+  export let strategy: 'absolute' | 'fixed' = 'absolute';
 
   let triggerElement: HTMLElement | undefined;
 
@@ -95,6 +96,7 @@
   class={contentClass}
   {closeOnInnerClick}
   {autoReposition}
+  {strategy}
   on:close={close}
   on:open
   on:close

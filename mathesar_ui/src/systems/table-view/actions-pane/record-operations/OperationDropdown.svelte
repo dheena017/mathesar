@@ -29,6 +29,7 @@
   bind:isOpen
   showArrow={false}
   triggerAppearance="secondary"
+  strategy="fixed"
   {...$$restProps}
   ariaLabel={label}
 >
