@@ -25,7 +25,7 @@
 </script>
 
 <Select
-  options={[...(allowEmpty ? [undefined] : []), ...columns]}
+  options={columns}
   labelKey="name"
   valuesAreEqual={(a, b) => a?.id === b?.id}
   bind:value
@@ -35,10 +35,6 @@
 >
   {#if option}
     <ProcessedColumnName processedColumn={option} />
-  {:else}
-    <div class="empty">
-      <slot name="empty" />
-    </div>
   {/if}
 </Select>
 
